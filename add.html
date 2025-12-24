@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Report Item | Lost & Found</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Lost & Found</div>
+    <nav>
+      <a href="lost.html">Lost</a>
+      <a href="found.html">Found</a>
+      <a href="add.html" class="btn">Report Item</a>
+    </nav>
+  </header>
+
+  <!-- Page Heading -->
+  <section class="page-header">
+    <h1>Report an Item</h1>
+    <p>Help reunite items with their owners</p>
+  </section>
+
+  <!-- Form -->
+  <section class="form-wrapper">
+    <form class="report-form">
+
+      <label>Item Type</label>
+      <select id="itemType">
+        <option>Lost</option>
+        <option>Found</option>
+      </select>
+
+      <label>Item Name</label>
+      <input type="text" id="itemName" placeholder="e.g. Black Wallet">
+
+      <label>Location</label>
+      <input type="text" id="itemLocation" placeholder="e.g. Library, Cafeteria">
+
+      <label>Description</label>
+      <textarea rows="4" id="itemDescription" placeholder="Any identifying details..."></textarea>
+
+      <button type="submit">Submit Report</button>
+
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built for students · Powered by Google Technologies</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
