@@ -1,3 +1,37 @@
+/* ================= FIREBASE SETUP ================= */
+
+// Import Firebase SDKs (for normal HTML + JS projects)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// Your Firebase configuration (UNCHANGED)
+const firebaseConfig = {
+  apiKey: "AIzaSyDOi6wewxYT_imET4WO3--Mhl_UH6HU2GA",
+  authDomain: "lost-and-found-23708.firebaseapp.com",
+  projectId: "lost-and-found-23708",
+  storageBucket: "lost-and-found-23708.firebasestorage.app",
+  messagingSenderId: "313548030264",
+  appId: "1:313548030264:web:492582d91a0a2b229ec1cd"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firestore (DATABASE)
+const db = getFirestore(app);
+
+/* ============== END FIREBASE SETUP ============== */
+
+
+
 /**********************
  * ADD ITEM FORM
  **********************/
