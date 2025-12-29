@@ -22,22 +22,39 @@
 </section>
 
 <section class="form-wrapper">
+  <!-- 🔴 IMPORTANT: class MUST be report-form -->
   <form class="report-form">
 
-    <label>Item Type</label>
+    <!-- ITEM TYPE -->
+    <label for="itemType">Item Type</label>
     <select id="itemType" required>
-      <option value="" disabled selected>Select type</option>
+      <option value="">Select type</option>
       <option value="lost">Lost</option>
       <option value="found">Found</option>
     </select>
 
-    <label>Item Name</label>
-    <input id="itemName" required>
+    <!-- CATEGORY -->
+    <label for="itemCategory">Category</label>
+    <select id="itemCategory" required>
+      <option value="">Select category</option>
+      <option value="electronics">Electronics</option>
+      <option value="documents">Documents</option>
+      <option value="accessories">Accessories</option>
+      <option value="clothing">Clothing</option>
+      <option value="stationery">Stationery</option>
+      <option value="others">Others</option>
+    </select>
 
-    <label>Location</label>
-    <input id="itemLocation" required>
+    <!-- ITEM NAME -->
+    <label for="itemName">Item Name</label>
+    <input type="text" id="itemName" required />
 
-    <label>Description</label>
+    <!-- LOCATION -->
+    <label for="itemLocation">Location</label>
+    <input type="text" id="itemLocation" required />
+
+    <!-- DESCRIPTION -->
+    <label for="itemDescription">Description</label>
     <textarea id="itemDescription"></textarea>
 
     <button type="submit">Submit</button>
@@ -49,6 +66,8 @@
   <p>Built for students · Powered by Google Technologies</p>
 </footer>
 
+<!-- 🔴 MUST be module -->
 <script type="module" src="js/app.js"></script>
+
 </body>
 </html>

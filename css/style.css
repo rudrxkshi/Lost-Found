@@ -574,3 +574,82 @@ form {
   align-self: center;
   margin-top: 10px;
 }
+
+.category-tag {
+  display: inline-block;
+  background: #eef3ff;
+  color: #2b4eff;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 40px;
+}
+
+.filters button {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: linear-gradient(135deg, #6a5cff, #8f6cff);
+  border-color: transparent;
+}
+
+/* ===============================
+   FORM DROPDOWN FIX (DARK THEME)
+================================ */
+
+.report-form select,
+.report-form input,
+.report-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Dropdown arrow color */
+.report-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Dropdown options */
+.report-form select option {
+  background-color: #0f172a; /* dark background */
+  color: #ffffff;
+}
+
+/* Placeholder (Select type, Select category) */
+.report-form select:invalid {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Focus effect */
+.report-form select:focus,
+.report-form input:focus,
+.report-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.6);
+}
