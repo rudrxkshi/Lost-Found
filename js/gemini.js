@@ -1,6 +1,6 @@
 // gemini.js
 export async function analyzeLostItem(name, description) {
-  const API_KEY = "AIzaSyCYS3SoiqdCAr4Sb8TJWIxNPr989S0mnXQ";
+  const API_KEY = "";
 
   const prompt = `
 You are categorizing lost & found items on a college campus.
