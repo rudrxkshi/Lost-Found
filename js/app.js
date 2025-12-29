@@ -10,9 +10,8 @@ import {
   doc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-/* ===============================
-   FIREBASE CONFIG
-================================ */
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyDOi6wewxYT_imET4WO3--Mhl_UH6HU2GA",
   authDomain: "lost-and-found-23708.firebaseapp.com",
@@ -25,17 +24,30 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-/* ===============================
-   DOM READY
-================================ */
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".report-form");
   const modal = document.getElementById("itemModal");
   const closeModalBtn = document.getElementById("closeModalBtn");
 
-  /* ===============================
-     ADD ITEM
-  ================================ */
+ 
+if (closeModalBtn && modal) {
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+  
+
   if (form) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -53,9 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let finalCategory = manualCategory.toLowerCase();
 
-// 🔥 IMPORTANT RULE:
-// If user selected a category → DO NOT override with Gemini
-// Gemini runs ONLY if category is missing
+
+
 if (!finalCategory) {
   try {
     const aiCategory = await analyzeLostItem(
@@ -79,7 +90,7 @@ try {
     time: new Date().toLocaleString()
   });
 
-  // ✅ redirect ONLY after successful save
+  
   window.location.href =
     type === "lost" ? "lost.html" : "found.html";
 
@@ -91,9 +102,8 @@ try {
     });
   }
 
-  /* ===============================
-     RENDER ITEMS
-  ================================ */
+  
+
   async function renderItems(type, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -130,13 +140,25 @@ try {
         renderItems(type, containerId);
       });
 
+      card.addEventListener("click", () => {
+  modal.style.display = "flex";
+
+  document.getElementById("modalTitle").textContent = item.name;
+  document.getElementById("modalLocation").textContent =
+    "📍 " + item.location;
+
+  document.getElementById("modalDescription").textContent =
+    item.description || "No description provided";
+
+  document.getElementById("modalTime").textContent = item.time;
+});
+
       container.appendChild(card);
     });
   }
 
-  /* ===============================
-     AUTO LOAD
-  ================================ */
+
+  
   if (document.body.classList.contains("lost-page")) {
     renderItems("lost", "lostItemsContainer");
   }
@@ -146,9 +168,8 @@ try {
   }
 });
 
-/* ===============================
-   FILTERS
-================================ */
+
+
 document.addEventListener("click", (e) => {
   if (!e.target.matches(".filters button")) return;
 
